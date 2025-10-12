@@ -1,14 +1,15 @@
-import React from "react";
-import Footer from "./Footer";
+import { ComponentProps } from "@/interfaces";
 import Header from "./Header";
+import Footer from "./Footer";
 
-const Loading: React.FC = () => {
+const Layout: React.FC<ComponentProps> = ({ children }) => {
   return (
     <>
-      <Footer />
       <Header />
+      <main className="min-h-screen">{children}</main>
+      <Footer />
     </>
   );
 };
 
-export default Loading;
+export default Layout;
